@@ -1,0 +1,323 @@
+.container{
+    width: 100%;
+    height: 100vh; 
+    background-image: linear-gradient(to right, #f3b07c, #fcd283);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: auto;
+    padding-bottom: 5rem;
+}
+.weather img {
+    position: absolute;
+    top: 20%; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0; 
+}
+
+
+/* ✅ Weather App Container */
+.weather-app { 
+    width: 90%; 
+    max-width: 40rem; 
+    min-height: 80vh; 
+    background-image: linear-gradient(to top, #f3b07c, #fcd283 );
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    box-shadow: -3rem 1rem 6rem rgba(0, 0, 0, 0.1);
+    position: relative;
+    justify-content: flex-start; 
+    padding-bottom: 2rem;
+}
+.search{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.search-top{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.search-top i{
+    font-size: 2rem;
+    color: #2f2e57;
+}
+
+.search-top div{
+    font-size: 1.6rem;
+    color: #484569;
+    letter-spacing: 0.1rem;
+}
+
+/* ✅ Search Bar Container */
+.search-bar {
+    position: relative;
+    z-index: 10; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    max-width: 35rem;
+    margin-top: 1rem;
+}
+
+
+.loader{
+    width: 5rem;
+    margin-top: 10rem;
+}
+
+.not-found{
+    position: absolute;
+    top: 20%;
+    font-size: 3rem;
+    color: #484569;
+    /*margin-top: 50rem;*/
+    text-shadow: -.3rem .5rem .1rem rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Search Input Field */
+.search-bar input {
+    width: 100%; 
+    max-width: 30rem; 
+    height: 3.5rem;
+    background-color: transparent;
+    border: 0.2rem solid #676394;
+    border-radius: 3rem;
+    outline: none;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: #484569;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ✅ Search Input Placeholder */
+.search-bar input::placeholder {
+    font-size: 1.4rem;
+    color: #676394;
+    letter-spacing: 0.1rem;
+}
+
+.search-bar input:focus::placeholder{
+    border-color: transparent;
+}
+
+/* ✅ Search Icon */
+.search-bar i {
+    position: absolute;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: #2f2e57;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+/* ✅ Icon Hover Effect */
+.search-bar i:hover {
+    color: #605d80; /* ✅ Slight color change on hover */
+}
+
+/* ✅ Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .search-bar {
+        max-width: 90%; /* ✅ Adjusts size for tablets */
+    }
+    .search-bar input {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-bar {
+        max-width: 100%;
+    }
+    .search-bar input {
+        height: 3rem;
+        font-size: 1.3rem;
+        padding: 0.8rem;
+    }
+    .search-bar i {
+        font-size: 1.3rem;
+    }
+}
+
+/* ✅ Loading State */
+.loader {
+    width: 5rem;
+    margin-top: 10rem;
+}
+
+/* ✅ Not Found Message */
+.not-found {
+    position: absolute;
+    top: 20%;
+    font-size: 3rem;
+    color: #484569;
+    text-shadow: -.3rem .5rem .1rem rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Weather Display */
+.weather {
+    margin-top: 2rem;
+    
+}
+
+.weather img {
+    margin-top: -16rem;
+}
+
+
+.weather-type {
+    position: relative; 
+    z-index: 2; 
+    margin-top: .2rem; 
+    font-size: 2rem;
+    color: #484569;
+    text-align: center;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.3); 
+    padding: 0.5rem 0; 
+    border-radius: 1rem; 
+    text-align: center;
+}
+
+.temp {
+    position: relative;
+    z-index: 2;
+    margin-top: 0.5rem; 
+    font-size: 9rem;
+    background-image: linear-gradient(to right, #2f2e57, #605d80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.weather-date {
+    position: relative; 
+    z-index: 2; 
+    margin-top: 1rem; 
+    font-size: 1.6rem;
+    color: #484569;
+    text-align: center;
+    width: 100%;
+}
+
+.weather-data {
+    position: relative; 
+    z-index: 2; 
+    margin-top: 2rem; 
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; 
+    column-gap: 1rem;
+    row-gap: 1rem;
+    padding: 0 2rem;
+    justify-content: center; 
+}
+
+
+.weather-data > div{
+    flex: 1 1 calc(50% - 1rem); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.data-name{
+    font-size: 1.6rem;
+    color: #605d80;
+}
+
+.weather-data i{
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: -0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.data{
+    font-size: 2rem;
+    color: #2f2e57;
+}
+/* ✅ Forecast Section  */
+.forecast-container {
+    text-align: center;
+    width: 100%;
+   margin-top: auto;
+   padding-top: 2rem;
+   padding-bottom: 2rem;
+    /*margin-bottom: 2rem;*/
+}
+
+.forecast-title {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #484569;    
+}
+
+/* ✅ Forecast Layout */
+.forecast {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 1rem;
+}
+
+/* ✅ Forecast Day Card */
+.forecast-day {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    width: 100px;
+    flex: 1 1 calc(20% - 1rem); /* ✅ Ensures 5 items fit in one row */
+}
+
+/* ✅ Forecast Icons */
+.forecast-day img {
+    width: 50px;
+    height: 50px;
+}
+
+/* ✅ Forecast Text */
+.forecast-day p {
+    font-size: 1.2rem;
+    color: #2f2e57;
+
+}
+/* ✅ Adjust for tablets */
+@media (max-width: 768px) {
+    .forecast-day {
+        flex: 1 1 calc(50% - 1rem); /* ✅ 2 per row */
+    }
+}
+
+/* ✅ Adjust for small screens */
+@media (max-width: 480px) {
+    .weather-app {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .weather-data > div {
+        flex: 1 1 100%; /* ✅ Stack in a single column */
+    }
+
+    .forecast-day {
+        width: 90%;
+    }
+}
